@@ -38,7 +38,7 @@ Jinja2==3.1.2
 joblib==1.2.0
 jsonlines==3.1.0
 jsonschema==4.17.3
-langchain==0.0.149
+langchain==0.0.142
 llama-cpp-python==0.1.41
 loguru==0.7.0
 lxml==4.9.2
