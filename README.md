@@ -4,7 +4,7 @@ Repo of the code from the Medium article
 
 ---
 
-**Update and bug fixes - 2023.05.23**<br>
+ ## Update and bug fixes - 2023.05.25
 - [x] Cannot install llama-cpp-python
 
 This happens usually only on Windows users. Running the installation of llama-cpp-python, required by <br>
