@@ -4,6 +4,23 @@ Repo of the code from the Medium article
 
 ---
 
+**Update and bug fixes - 2023.05.23**<br>
+- [x] Cannot install llama-cpp-python
+
+This happens usually only on Windows users. Running the installation of llama-cpp-python, required by <br>
+LangChain with the llamaEmbeddings, on windows CMake C complier is not installed by default, so you cannot build from source. <br>
+On Mac Users with Xtools and on Linux, usually the C complier is already available on the OS. <br>
+To avoid the issue you MUST use pre complied wheel. <br>
+Go here [https://github.com/abetlen/llama-cpp-python/releases](https://github.com/abetlen/llama-cpp-python/releases)  <br> 
+and look for the complied wheel for your architecture and python version - **you MUST take Weels Version 0.1.49**  <br>
+because higher versions are not compatible. <br>
+
+<img src="https://i.ibb.co/8j50gXw/issue-llama-cpp-Built-In-compiled-Wheels.jpg">
+
+In  my case I have Windows 10, 64 bit, python 3.10 <br>
+so my file is llama_cpp_python-0.1.49-cp310-cp310-win_amd64.whl <br>
+
+
 ## Troubleshooting Section
 **Update and bug fixes - 2023.05.23**<br>
 - [x] Some readers faces an issue with `langchain.callbacks` <br>
