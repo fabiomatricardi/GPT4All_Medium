@@ -88,4 +88,3 @@ model.cpp_generate("Once upon a time, ", n_predict=55, new_text_callback=new_tex
 ```
 
 
-If this story provided value and you wish to show a little support, you
