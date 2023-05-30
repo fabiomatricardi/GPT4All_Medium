@@ -3,6 +3,16 @@ Repo of the code from the Medium article
 
 
 ---
+ ## Update and bug fixes - 2023.05.30
+- [x] llama.cpp: loading model from ./models/ggml-model-q4_0.bin 'std::runtime_error' what(): unexpectedly reached end of file
+
+Buğra Çakır reported an issue, running the code on Python 3.11.3 (main, May 24 2023, 00:00:00) [GCC 13.1.1 20230511 (Red Hat 13.1.1-2)] on linux<br>
+He solved the issue installing a different llama-cpp-python version with
+```
+pip install llama-cpp-python==0.1.48
+```
+
+
 
  ## Update and bug fixes - 2023.05.25
 - [x] Cannot install llama-cpp-python
