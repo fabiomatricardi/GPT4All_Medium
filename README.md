@@ -3,6 +3,26 @@ Repo of the code from the Medium article
 
 
 ---
+## Update and bug fixes - 2023.06.05
+The ggml-model-q4_0.bin model has been changed a lot in the past weeks. <br>It may throw you an error when trying even to load it.<br> 
+You can use a different embeddings for the creation of the Vector indexing (and in this case you don't need to load ggml-model-q4_0.bin)
+Here how to proceed:<br>
+Remove the call to that model, and replace the embeddings with the Hugging Face ones: <u>remember to import them</u> with 
+```python
+from langchain.embeddings import HuggingFaceEmbeddings
+# assign the path for the 2 models GPT4All and Alpaca for the embeddings 
+gpt4all_path = './models/gpt4all-converted.bin' 
+## REMOVED ## llama_path = './models/ggml-model-q4_0.bin' 
+# Calback manager for handling the calls with  the model
+callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
+# create the embedding object
+## REMOVED ## embeddings = LlamaCppEmbeddings(model_path=llama_path)
+embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
+# create the GPT4All llm object
+llm = GPT4All(model=gpt4all_path, callback_manager=callback_manager, verbose=True)
+```
+Create the vector index with these embeddings
+
  ## Update and bug fixes - 2023.05.30
 - [x] llama.cpp: loading model from ./models/ggml-model-q4_0.bin 'std::runtime_error' what(): unexpectedly reached end of file
 
